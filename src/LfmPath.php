@@ -316,6 +316,6 @@ class LfmPath
         $image = Image::make($original_image->get())
                       ->fit(config('lfm.thumb_img_width', 200), config('lfm.thumb_img_height', 200));
 
-        $this->storage->put($image->stream()->detach());
+        $this->storage->put($image->stream()->detach(), 'public');
     }
 }
